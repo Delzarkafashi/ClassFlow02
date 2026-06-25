@@ -7,8 +7,13 @@ import {
     getStudentDashboard
 } from "../../services/dashboardApi";
 
+import AdminDashboard from "../../components/AdminDashboard/AdminDashboard";
+import TeacherDashboard from "../../components/TeacherDashboard/TeacherDashboard";
+import StudentDashboard from "../../components/StudentDashboard/StudentDashboard";
+
 function Dashboard() {
     const [dashboard, setDashboard] = useState<any>(null);
+    const [role, setRole] = useState("Admin");
 
     useEffect(() => {
         loadAdmin();
@@ -17,16 +22,19 @@ function Dashboard() {
     const loadAdmin = async () => {
         const data = await getAdminDashboard();
         setDashboard(data);
+        setRole("Admin");
     };
 
     const loadTeacher = async () => {
         const data = await getTeacherDashboard();
         setDashboard(data);
+        setRole("Teacher");
     };
 
     const loadStudent = async () => {
         const data = await getStudentDashboard();
         setDashboard(data);
+        setRole("Student");
     };
 
     return (
@@ -36,33 +44,40 @@ function Dashboard() {
 
             <div className="role-buttons">
 
-                <button onClick={loadAdmin}>
+                <button
+                    className={role === "Admin" ? "active" : ""}
+                    onClick={loadAdmin}
+                >
                     Admin
                 </button>
 
-                <button onClick={loadTeacher}>
+                <button
+                    className={role === "Teacher" ? "active" : ""}
+                    onClick={loadTeacher}
+                >
                     Utbildare
                 </button>
 
-                <button onClick={loadStudent}>
+                <button
+                    className={role === "Student" ? "active" : ""}
+                    onClick={loadStudent}
+                >
                     Student
                 </button>
 
             </div>
 
-            <div className="dashboard-content">
+            {role === "Admin" && (
+                <AdminDashboard dashboard={dashboard} />
+            )}
 
-                <h2>{dashboard?.role}</h2>
+            {role === "Teacher" && (
+                <TeacherDashboard dashboard={dashboard} />
+            )}
 
-                <ul>
-                    {dashboard?.pages.map((page: string) => (
-                        <li key={page}>
-                            {page}
-                        </li>
-                    ))}
-                </ul>
-
-            </div>
+            {role === "Student" && (
+                <StudentDashboard dashboard={dashboard} />
+            )}
 
         </div>
     );
