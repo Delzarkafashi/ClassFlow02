@@ -1,6 +1,11 @@
+using backend.src.Interfaces;
+using backend.src.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<IClassService, ClassService>();
 
 builder.Services.AddCors(options =>
 {

@@ -1,0 +1,187 @@
+.edit-class
+{
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-top: 15px;
+
+    padding: 20px;
+
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+
+    background-color: #f8f9fa;
+}
+
+.edit-class h4
+{
+    margin: 0;
+}
+
+.edit-class label
+{
+    font-weight: bold;
+}
+
+.edit-class input,
+.edit-class textarea
+{
+    width: 100%;
+
+    padding: 10px;
+
+    font-size: 16px;
+
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+
+    box-sizing: border-box;
+}
+
+.edit-class textarea
+{
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+.date-row
+{
+    display: flex;
+
+    gap: 20px;
+}
+
+.date-row > div
+{
+    flex: 1;
+}
+
+.edit-buttons
+{
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.edit-buttons button
+{
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.edit-buttons button:first-child
+{
+    background-color: #2563eb;
+
+    color: white;
+}
+
+.edit-buttons button:first-child:hover
+{
+    background-color: #1d4ed8;
+}
+
+.edit-buttons button:last-child
+{
+    background-color: #6c757d;
+
+    color: white;
+}
+
+.show-classes
+{
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+.show-classes h3
+{
+    margin: 0;
+}
+
+.class-card
+{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 25px;
+
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.class-card h4
+{
+    margin: 0;
+
+    font-size: 24px;
+}
+
+.class-card p
+{
+    margin: 0;
+
+    color: #555;
+}
+
+.class-actions
+{
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.class-actions button
+{
+    min-width: 100px;
+
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+.class-actions button:first-child
+{
+    background-color: #2563eb;
+
+    color: white;
+}
+
+.class-actions button:first-child:hover
+{
+    background-color: #1d4ed8;
+}
